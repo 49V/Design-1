@@ -2,12 +2,19 @@
 https://leetcode.com/problems/min-stack/
 
 Time Complexity :
+O(1) for all operations
 
 Space Complexity :
+O(n)
 
 Did this code successfully run on Leetcode :
 
+Yes
+
 Conceptual Approach:
+
+Have each element keep track of the last known min element when it was pushed. When it's popped make sure to update
+the last known min element!
 
 Edge Cases:
 
@@ -15,10 +22,6 @@ Edge Cases:
 
 Hence we need to keep track of all the elements from min to max as we push values - but obviously we can't use something like a heap as every operation
 needs to be constant. This gives us the hint that we will somehow need to use an array to have this constant time complexity.
-
-Don't use an array, use a linked list! This allows us to keep track of the elements in a ordered way. So this is one part for sure, but the problem
-still becomes when we push an element, this is not guaranteed to be non constant. The linked list keeps track of the ordering but O(1) inserts are not
-possible - unless we use a linked list in combination with a hash map -> This still does not solve the problem
 
 - Are duplicate elements allowed?
 
